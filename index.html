@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suvajit Sinha - Software Developer</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom styles for professional dark look and scroll interaction */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+            background-color: #0d1117; /* Darker near-black for a GitHub-like professional feel */
+            color: #f3f4f6; /* Light Gray text */
+            overflow-x: hidden;
+        }
+        .nav-link:hover {
+            color: #58a6ff; /* Lighter blue accent */
+            transform: scale(1.05);
+            transition: all 0.3s ease;
+        }
+        .section-header {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 2rem;
+        }
+        .section-header::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 50%;
+            height: 4px;
+            background-color: #58a6ff; /* Lighter Blue accent */
+            border-radius: 2px;
+        }
+
+        /* --- Custom Button Styles for better attraction --- */
+        .cta-button {
+            background-color: #2188ff; /* Strong blue */
+            box-shadow: 0 4px 15px rgba(33, 136, 255, 0.4); /* Stronger blue glow shadow */
+            transition: all 0.3s ease;
+        }
+        .cta-button:hover {
+            background-color: #0077e6; /* Darker blue on hover */
+            box-shadow: 0 6px 20px rgba(33, 136, 255, 0.6);
+            transform: translateY(-2px) scale(1.02);
+        }
+        .outline-button {
+            border-color: #2188ff;
+            color: #58a6ff;
+            transition: all 0.3s ease;
+        }
+        .outline-button:hover {
+            background-color: rgba(33, 136, 255, 0.1); /* Subtle blue background on hover */
+            color: #58a6ff;
+            transform: translateY(-2px) scale(1.02);
+            box-shadow: 0 4px 10px rgba(33, 136, 255, 0.2);
+        }
+
+        /* --- Card Hover Effect --- */
+        .card-hover {
+            background-color: #161b22; /* Slightly lighter card background */
+            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+        .card-hover:hover {
+            transform: translateY(-8px) scale(1.01);
+            box-shadow: 0 20px 40px -10px rgba(33, 136, 255, 0.3), 0 4px 6px -2px rgba(33, 136, 255, 0.1);
+        }
+        
+        /* --- Skill Bar Styles --- */
+        .skill-bar-container {
+            background-color: #374151; /* Darker grey for container */
+            border-radius: 9999px;
+            height: 0.75rem;
+            overflow: hidden;
+            box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3);
+        }
+        .skill-bar {
+            height: 100%;
+            background-color: #58a6ff; /* Blue accent for skill fill */
+            transition: width 1s ease-out;
+            border-radius: 9999px;
+        }
+
+        /* Animation for fade-in on scroll */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+        }
+        .fade-in.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Section separators: subtle line between consecutive sections */
+        section + section {
+            border-top: 1px solid rgba(255,255,255,0.06);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav id="navbar" class="sticky top-0 z-50 bg-[#161b22] shadow-xl border-b border-gray-700">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex-shrink-0">
+                    <span class="text-2xl font-bold text-[#58a6ff]">Suvajit Sinha<span class="text-white">.dev</span></span>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#about" class="nav-link text-gray-300 hover:text-[#58a6ff] font-medium">About</a>
+                    <a href="#skills" class="nav-link text-gray-300 hover:text-[#58a6ff] font-medium">Skills</a>
+                    <a href="#education" class="nav-link text-gray-300 hover:text-[#58a6ff] font-medium">Education</a>
+                    <a href="#contact" class="nav-link text-gray-300 hover:text-[#58a6ff] font-medium">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
+
+        <!-- Hero Section -->
+        <section id="hero" class="text-center md:text-left pt-8 pb-12 fade-in">
+            <div class="flex flex-col items-center justify-center">
+                <div class="w-full">
+                    <p class="text-lg text-[#58a6ff] font-semibold mb-2">Hello, I'm</p>
+                    <h1 class="text-6xl font-extrabold leading-tight text-white mb-4 drop-shadow-lg">Suvajit Sinha</h1>
+                    <h2 class="text-3xl font-light text-gray-300 mb-6">Software Developer</h2>
+                    <p class="text-xl text-gray-400 max-w-4xl mx-auto md:mx-0">
+                        Building Scalable & Intelligent Web Solutions. Driven by curiosity and a deep interest in how technology shapes everyday life.
+                    </p>
+                    <!-- Feature grid to reduce empty space and showcase focus areas -->
+                    <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-4xl mx-auto md:mx-0">
+                        <div class="p-4 bg-gray-800 rounded-lg card-hover border border-gray-700 text-left">
+                            <h4 class="text-lg font-semibold text-white">Web Applications</h4>
+                            <p class="text-sm text-gray-400 mt-1">Responsive front-ends using modern frameworks with attention to UX.</p>
+                        </div>
+                        <div class="p-4 bg-gray-800 rounded-lg card-hover border border-gray-700 text-left">
+                            <h4 class="text-lg font-semibold text-white">APIs & Backends</h4>
+                            <p class="text-sm text-gray-400 mt-1">Robust REST/GraphQL services optimized for reliability and scale.</p>
+                        </div>
+                        <div class="p-4 bg-gray-800 rounded-lg card-hover border border-gray-700 text-left">
+                            <h4 class="text-lg font-semibold text-white">Performance & Scale</h4>
+                            <p class="text-sm text-gray-400 mt-1">Design patterns and infrastructure choices for maintainable growth.</p>
+                        </div>
+                    </div>
+
+                    <div class="mt-8 flex justify-center space-x-4 flex-wrap gap-4">
+                        <a href="#contact" class="px-6 py-3 text-white font-semibold rounded-lg shadow-xl cta-button">
+                            Get in Touch
+                        </a>
+                        <a href="https://github.com/suvajit324" target="_blank" class="px-6 py-3 border font-semibold rounded-lg outline-button flex items-center">
+                            <!-- GitHub Icon (Inline SVG) -->
+                            <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.163 6.83 9.497.5.092.682-.217.682-.483 0-.237-.008-.867-.013-1.792-2.782.605-3.369-1.343-3.369-1.343-.455-1.15-.11-1.458-.11-1.458.932-.641 1.416.929 1.416.929.826 1.405 2.164.995 2.695.757.085-.587.324-.995.592-1.222-2.05-.23-4.21-1.03-4.21-4.588 0-1.018.364-1.844.962-2.498-.096-.23-.418-1.18.092-2.467 0 0 .784-.25 2.564.957A8.256 8.256 0 0112 5.617c.85.006 1.7.127 2.483.376 1.78-.291 2.564-.957 2.564-.957.51 1.288.188 2.237.092 2.467.598.654.962 1.48.962 2.498 0 3.567-2.164 4.354-4.223 4.581.332.286.63.856.63 1.936 0 1.391-.012 2.518-.012 2.859 0 .267.18.58.688.482C19.137 20.18 22 16.442 22 12.017A10.01 10.01 0 0012 2z" clip-rule="evenodd"/></svg>
+                            View GitHub
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section (LLM feature removed) -->
+        <section id="about" class="py-12 fade-in">
+            <h3 class="section-header text-4xl font-bold text-white mb-8">About Me</h3>
+            <div class="p-8 rounded-xl shadow-2xl card-hover border border-gray-700">
+                <p id="current-summary" class="text-lg leading-relaxed text-gray-300 mb-6">
+                    I approach every challenge as an opportunity to learn, adapt, and deliver meaningful, well-engineered solutions through code. I focus on developing high-quality web applications and mastering the craft of scalable software design. Based in Bhubaneswar, Odisha, India.
+                </p>
+            </div>
+        </section>
+
+        <!-- Skills Section (LLM feature removed) -->
+        <section id="skills" class="py-12 fade-in">
+            <h3 class="section-header text-4xl font-bold text-white mb-8">Top Skills</h3>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Skill 1: DSA -->
+                <div class="p-6 rounded-xl shadow-lg card-hover border border-gray-700">
+                    <div class="flex justify-between items-center mb-1">
+                        <h4 class="text-xl font-semibold text-white">Data Structures & Algorithms (DSA)</h4>
+                        <span class="skill-percentage text-lg font-bold text-[#58a6ff]" data-skill-level="90"></span>
+                    </div>
+                    <p class="text-sm text-gray-400 mb-2">Fundamental knowledge for problem-solving.</p>
+                    <div class="skill-bar-container">
+                        <div class="skill-bar" data-skill-level="90"></div>
+                    </div>
+                </div>
+
+                <!-- Skill 2: Front-End Development -->
+                <div class="p-6 rounded-xl shadow-lg card-hover border border-gray-700">
+                    <div class="flex justify-between items-center mb-1">
+                        <h4 class="text-xl font-semibold text-white">Front-End Development</h4>
+                        <span class="skill-percentage text-lg font-bold text-[#58a6ff]" data-skill-level="85"></span>
+                    </div>
+                    <p class="text-sm text-gray-400 mb-2">Building high-quality web applications.</p>
+                    <div class="skill-bar-container">
+                        <div class="skill-bar" data-skill-level="85"></div>
+                    </div>
+                </div>
+
+                <!-- Skill 3: SQL -->
+                <div class="p-6 rounded-xl shadow-lg card-hover border border-gray-700">
+                    <div class="flex justify-between items-center mb-1">
+                        <h4 class="text-xl font-semibold text-white">SQL</h4>
+                        <span class="skill-percentage text-lg font-bold text-[#58a6ff]" data-skill-level="75"></span>
+                    </div>
+                    <p class="text-sm text-gray-400 mb-2">Managing and querying relational databases.</p>
+                    <div class="skill-bar-container">
+                        <div class="skill-bar" data-skill-level="75"></div>
+                    </div>
+                </div>
+
+                <!-- Skill 4: Scalable Software Design (Inferred from summary) -->
+                <div class="p-6 rounded-xl shadow-lg card-hover border border-gray-700">
+                    <div class="flex justify-between items-center mb-1">
+                        <h4 class="text-xl font-semibold text-white">Scalable Software Design</h4>
+                        <span class="skill-percentage text-lg font-bold text-[#58a6ff]" data-skill-level="80"></span>
+                    </div>
+                    <p class="text-sm text-gray-400 mb-2">Focus on mastering efficient and robust systems.</p>
+                    <div class="skill-bar-container">
+                        <div class="skill-bar" data-skill-level="80"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section id="education" class="py-12 fade-in">
+            <h3 class="section-header text-4xl font-bold text-white mb-8">Education</h3>
+
+            <div class="space-y-8">
+                <!-- KiiT University -->
+                <div class="p-8 rounded-xl shadow-2xl card-hover relative border-l-4 border-[#58a6ff]">
+                    <span class="absolute top-0 right-0 m-4 text-sm font-medium text-white bg-gray-700 px-3 py-1 rounded-full shadow-md">Ongoing</span>
+                    <h4 class="text-2xl font-semibold text-white">Bachelor of Technology - BTech, Computer Science</h4>
+                    <p class="text-lg text-gray-300 mb-2">KiiT University</p>
+                    <p class="text-md text-gray-400">Focusing on theoretical foundations and practical application of CS principles.</p>
+                </div>
+
+                <!-- SNBP WORLD SCHOOL, RAHATANI (Class 12) -->
+                <div class="p-8 rounded-xl shadow-2xl card-hover relative border-l-4 border-gray-500">
+                    <span class="absolute top-0 right-0 m-4 text-sm font-medium text-gray-400">April 2022 - Feb 2023</span>
+                    <h4 class="text-2xl font-semibold text-white">Class 12, Science</h4>
+                    <p class="text-lg text-gray-300 mb-2">SNBP WORLD SCHOOL, RAHATANI</p>
+                    <p class="text-md text-gray-400">Completed higher secondary education in the Science stream.</p>
+                </div>
+
+                <!-- SNBP WORLD SCHOOL, RAHATANI (Class 10) -->
+                <div class="p-8 rounded-xl shadow-2xl card-hover relative border-l-4 border-gray-500">
+                    <span class="absolute top-0 right-0 m-4 text-sm font-medium text-gray-400">March 2020 - April 2021</span>
+                    <h4 class="text-2xl font-semibold text-white">Class 10</h4>
+                    <p class="text-lg text-gray-300 mb-2">SNBP WORLD SCHOOL, RAHATANI</p>
+                    <p class="text-md text-gray-400">Secondary school completion.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-12 fade-in">
+            <h3 class="section-header text-4xl font-bold text-white mb-8">Contact</h3>
+            <div class="p-8 rounded-xl shadow-2xl card-hover border border-gray-700">
+                <p class="text-lg mb-6 text-gray-300">I'm always open to discussing new projects, collaboration opportunities, or positions as a Software Engineer. Feel free to reach out!</p>
+                
+                <!-- Updated Grid: Changed from lg:grid-cols-4 back to lg:grid-cols-3 -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    
+                    <!-- 1. Email Card -->
+                    <div class="p-4 bg-gray-800 rounded-lg card-hover border border-gray-700 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-start mb-2">
+                                <svg class="w-7 h-7 text-[#58a6ff] mr-3 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                                <div>
+                                    <p class="font-semibold text-[#58a6ff]">Email</p>
+                                    <!-- FIX: Added truncate and text-sm to prevent awkward line breaks on email -->
+                                    <p id="email-text" class="text-gray-300 truncate text-sm font-medium">ssuvajit.sinha@gmail.com</p>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="mailto:ssuvajit.sinha@gmail.com" class="mt-4 w-full text-center text-white font-medium py-2 rounded-lg bg-[#58a6ff] hover:bg-[#4895ee] transition duration-300 shadow-md">
+                            Send Email
+                        </a>
+                    </div>
+                    
+                    <!-- 2. GitHub Card -->
+                    <div class="p-4 bg-gray-800 rounded-lg card-hover border border-gray-700 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-start mb-2">
+                                <svg class="w-7 h-7 text-[#58a6ff] mr-3 mt-1" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.163 6.83 9.497.5.092.682-.217.682-.483 0-.237-.008-.867-.013-1.792-2.782.605-3.369-1.343-3.369-1.343-.455-1.15-.11-1.458-.11-1.458.932-.641 1.416.929 1.416.929.826 1.405 2.164.995 2.695.757.085-.587.324-.995.592-1.222-2.05-.23-4.21-1.03-4.21-4.588 0-1.018.364-1.844.962-2.498-.096-.23-.418-1.18.092-2.467 0 0 .784-.25 2.564.957A8.256 8.256 0 0112 5.617c.85.006 1.7.127 2.483.376 1.78-.291 2.564-.957 2.564-.957.51 1.288.188 2.237.092 2.467.598.654.962 1.48.962 2.498 0 3.567-2.164 4.354-4.223 4.581.332.286.63.856.63 1.936 0 1.391-.012 2.518-.012 2.859 0 .267.18.58.688.482C19.137 20.18 22 16.442 22 12.017A10.01 10.01 0 0012 2z" clip-rule="evenodd"/></svg>
+                                <div>
+                                    <p class="font-semibold text-[#58a6ff]">GitHub</p>
+                                    <!-- FIX: Ensured text fits on one line or wraps cleanly -->
+                                    <p class="text-gray-300 text-xs font-medium">View Code Repositories</p>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="https://github.com/suvajit324" target="_blank" class="mt-4 w-full text-center text-white font-medium py-2 rounded-lg bg-[#58a6ff] hover:bg-[#4895ee] transition duration-300 shadow-md">
+                            View Profile
+                        </a>
+                    </div>
+
+                    <!-- 3. LinkedIn Card -->
+                    <div class="p-4 bg-gray-800 rounded-lg card-hover border border-gray-700 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-start mb-2">
+                                <svg class="w-7 h-7 text-[#58a6ff] mr-3 mt-1" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.447 20.452h-3.554v-5.629c0-1.35.485-2.26 1.766-2.26 1.18 0 1.637.892 1.637 2.227v5.662h-3.554c0 .015 0-.015 0 0zm-15.341-6.19c-.312.441-.758 1.055-.758 1.055v4.542h3.554v-4.733c0-.441 0-.85-.452-1.055-.452-.205-1.077-.103-1.077-.103zM4.613 5.48a1.693 1.693 0 110 3.386 1.693 1.693 0 010-3.386zM3.882 20.452h3.554V10.198H3.882v10.254zM22.064 0H1.936A1.936 1.936 0 000 1.936v20.128A1.936 1.936 0 001.936 24h20.128A1.936 1.936 0 0024 22.064V1.936A1.936 1.936 0 0022.064 0z"/></svg>
+                                <div>
+                                    <p class="font-semibold text-[#58a6ff]">LinkedIn</p>
+                                    <!-- FIX: Ensured text fits on one line or wraps cleanly -->
+                                    <p class="text-gray-300 text-xs font-medium">View Professional Network</p>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="https://www.linkedin.com/in/suvajit-sinha-5a05a0210" target="_blank" class="mt-4 w-full text-center text-white font-medium py-2 rounded-lg bg-[#58a6ff] hover:bg-[#4895ee] transition duration-300 shadow-md">
+                            Connect on LinkedIn
+                        </a>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-6 mt-12 border-t border-gray-700">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p>&copy; 2025 Suvajit Sinha. All rights reserved.</p>
+            <p class="text-sm text-gray-500 mt-2">Software Developer</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Interactivity -->
+    <script>
+        // 1. Skill Bar Animation & Percentage Display
+        function animateSkillBars() {
+            const skillBars = document.querySelectorAll('.skill-bar');
+            const skillPercentages = document.querySelectorAll('.skill-percentage');
+
+            skillBars.forEach(bar => {
+                const level = bar.getAttribute('data-skill-level');
+                bar.style.width = '0%';
+                void bar.offsetWidth; 
+                bar.style.width = level + '%';
+            });
+
+            skillPercentages.forEach(span => {
+                const level = span.getAttribute('data-skill-level');
+                span.textContent = `${level}%`;
+            });
+        }
+
+        // 2. Scroll-based Fade-In Effect (Intersection Observer)
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        document.querySelectorAll('.fade-in').forEach(section => {
+            observer.observe(section);
+        });
+
+        // 3. Run Skill Animation when Skills section is visible
+        const skillsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateSkillBars();
+                    skillsObserver.unobserve(entry.target); 
+                }
+            });
+        }, {
+            threshold: 0.5
+        });
+
+        const skillsSection = document.getElementById('skills');
+        if (skillsSection) {
+            skillsObserver.observe(skillsSection);
+        }
+        
+        // 4. Smooth Scrolling for Navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+    </script>
+</body>
+</html>
